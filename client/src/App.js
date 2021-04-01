@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header';
 import HomeScreen from './Screens/HomeScreens';
+import LoginScreens from './Screens/LoginScreens';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Header></Header>
       <Container>
           <Route path="/" component={HomeScreen} exact></Route>
+          <Route path="/login" component={LoginScreens} ></Route>
       </Container>
       </Router>
   );

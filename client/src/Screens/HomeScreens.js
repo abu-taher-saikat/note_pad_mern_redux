@@ -25,7 +25,7 @@ const HomeScreens = () => {
                         </Button>
                     </Col>
                     <Col> 
-                        <img src={HomeScreenImage} alt="" srcset=""/>  
+                        <img src={HomeScreenImage} alt="" />  
                     </Col>
                 </Row>
             </Container>
