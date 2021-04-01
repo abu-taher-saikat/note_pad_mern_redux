@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+}
+
+.header .logo {
+  padding-top: 5px;
+}

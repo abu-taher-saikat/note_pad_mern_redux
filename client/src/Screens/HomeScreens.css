@@ -1,0 +1,23 @@
+.home_screen .left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.homepage_text {
+  font-family: "Rubik", sans-serif;
+}
+/* .login-button {
+  font-weight: bold;
+  font-size: 20px;
+} */
+
+.home_screen .login-button {
+  background-color: #289672;
+  font-family: "Karla", sans-serif;
+}
+
+.home_screen .register-button {
+  background-color: #289672;
+  font-family: "Karla", sans-serif;
+}
