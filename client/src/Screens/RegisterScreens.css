@@ -1,0 +1,53 @@
+.register__screen {
+  /* padding-top: 10px; */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  border: 1px solid black;
+  margin-top: 15vh;
+}
+.register__screen img {
+  padding-bottom: 2rem;
+  padding-top: 20px;
+  max-height: 400px;
+}
+.register__screen .row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.register__screen::placeholder {
+  font-family: "Karla", sans-serif;
+  padding-left: 50px;
+}
+
+.register__screen #email,
+#password,
+#text {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.register__screen .right__login {
+  background-color: #e6dd3b;
+  padding-left: 10%;
+  padding-right: 10%;
+  /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.register__screen button {
+  width: 100%;
+  /* border-radius: 5%; */
+}
+
+.left__login .noter {
+  font-family: "Rubik", sans-serif;
+  font-size: 36px;
+}
+.left__login p {
+  font-family: "Rubik", sans-serif;
+  line-height: 0.5rem;
+}

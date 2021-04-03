@@ -1,0 +1,35 @@
+.dashboard .upper__left {
+  font-size: 26px;
+  font-family: "Karla", sans-serif;
+}
+
+.dashboard .input {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.dashboard .firstRow {
+  padding-top: 40px;
+}
+
+.dashboard .firstRow input[type="text"] {
+  font-size: bold;
+  padding: 10px;
+  border: none;
+}
+
+.dashboard .firstRow input:focus {
+  outline: none;
+}
+
+.dashboard .searchIcon {
+  outline: none;
+  border: none;
+  padding: 10px;
+  float: right;
+}
+
+.dashboard .searchBar {
+  border: 1px solid black;
+  width: 80%;
+}
