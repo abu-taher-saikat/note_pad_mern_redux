@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 
 
 // Load env vars 
-dotenv.config({path : './config/config.env'});
+dotenv.config({path : './backend/config/config.env'});
 
 // Load modules
 const Note = require('./models/Note');
