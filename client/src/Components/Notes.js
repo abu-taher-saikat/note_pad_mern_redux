@@ -19,7 +19,7 @@ const Notes = () => {
                 </Col>
             </Row>
             <div className="d-flex justify-content-end mr-4 ">
-                <Button className="button" variant="outline-primary">Read More</Button>
+                <Button href="/notes" className="button mb-2" variant="outline-primary">Read More</Button>
             </div>
         </div>
     )

@@ -37,3 +37,8 @@
 .badge {
   margin: 3px 5px;
 }
+
+.profile .profile-img img {
+  width: 100%;
+  border-radius: 50%;
+}

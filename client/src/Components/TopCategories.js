@@ -1,9 +1,10 @@
 import React from 'react';
 import { Badge } from 'react-bootstrap';
+import "./TopCategories.css";
 
 const TopCategories = () => {
     return (
-        <>
+        <div className="topCategories">
             <h6 className="text-center">Top Categories</h6>
 
             <div>
@@ -15,7 +16,7 @@ const TopCategories = () => {
                 <Badge variant="dark">Categories</Badge>
                 <Badge variant="dark">Categories</Badge>
             </div>
-        </>
+        </div>
     )
 }
 
