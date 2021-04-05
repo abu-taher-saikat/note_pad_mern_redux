@@ -3,6 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import { AiOutlineAppstoreAdd } from 'react-icons/ai';
 import Notes from '../Components/Notes';
 import Searchbar from '../Components/Serchbar';
+import Sidebar from '../Components/Sidebar';
 import "./DashboardScreens.css";
 
 const DashboardScreens = () => {
@@ -32,7 +33,9 @@ const DashboardScreens = () => {
                <Col md={8}>
                    <Notes></Notes>
                </Col>
-               <Col md={4}>four</Col>
+               <Col md={4}>
+                   <Sidebar></Sidebar>
+               </Col>
            </Row>
         </div>
     )

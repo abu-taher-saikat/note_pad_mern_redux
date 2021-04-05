@@ -5,8 +5,8 @@ import Header from './Components/Header';
 import DashboardScreens from './Screens/DashboardScreens';
 import HomeScreen from './Screens/HomeScreens';
 import LoginScreens from './Screens/LoginScreens';
+import NotePageScreens from './Screens/NotePageScreens';
 import RegisterScreens from './Screens/RegisterScreens';
-
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route path="/login" component={LoginScreens} ></Route>
           <Route path="/register" component={RegisterScreens} ></Route>
           <Route path="/dashboard" component={DashboardScreens} ></Route>
+          <Route path="/notes" component={NotePageScreens} ></Route>
       </Container>
       </Router>
   );
