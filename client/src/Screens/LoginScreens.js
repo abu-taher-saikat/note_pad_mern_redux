@@ -1,15 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { login } from '../actions/userActions';
 import LoginImage from '../Image/loginPage.png';
 import Noter from '../Image/Noter.png';
 import './LoginScreens.css';
 
-const LoginScreens = () => {
 
-    const handleButton = (e) => {
+const LoginScreens = ({history, location}) => {
+    const [email , setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const dispatch = useDispatch();
+
+
+
+    const userLogin = useSelector((state) => state.userLogin);
+    const {loading, error, userInfo} = userLogin;
+
+    const redirect = location.search ? location.search.split('=')[1] : '/dashboard'
+    useEffect(()=> {
+        if(userInfo){
+            history.push(redirect)
+        }
+    },[history, userInfo, redirect])
+
+    const submitHandler = (e) => {
         e.preventDefault();
+        dispatch(login(email, password));
     }
+
+    
     return (
         <>
             <Container className="login__screen">
@@ -22,13 +44,13 @@ const LoginScreens = () => {
 
                     <Col className="right__login">
                         <img src={Noter} alt="" srcSet=""/>
-                        <Form onSubmit={handleButton}>
+                        <Form onSubmit={submitHandler}>
                             <Form.Group controlId="formBasicEmail">
-                                <input placeholder="Email Address" type="email" name="" id="email"/>
+                                <input onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" type="email" name="" id="email"/>
                             </Form.Group>
                             
                             <Form.Group controlId="formBasicPassword">
-                                <input placeholder="password" type="password" name="" id="password"/>
+                                <input onChange={(e) => setPassword(e.target.value)} placeholder="password" type="password" name="" id="password"/>
                                 <Form.Text className="text-muted">
                                     <Link to="/forgotPassword">Forgot Password</Link> 
                                 </Form.Text>
