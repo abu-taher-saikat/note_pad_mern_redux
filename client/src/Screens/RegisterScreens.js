@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { register } from '../actions/userActions';
+import Loader from '../Components/Loader';
+import Message from '../Components/Message';
 import Noter from '../Image/Noter.png';
 import RegisterImage from '../Image/RegisterPage.png';
 import './RegisterScreens.css';
 
-const RegisterScreens = () => {
 
-    const handleButton = (e) => {
+const RegisterScreens = ({location, history}) => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const dispatch = useDispatch();
+
+    const userRegister = useSelector((state) => state.userRegister);
+    const {loading, error, userInfo} = userRegister;
+
+    const redirect = location.search ? location.search.split('=')[1] : '/'
+
+    useEffect(()=>{
+        if(userInfo){
+            history.push(redirect)
+        }
+    },[history, userInfo, redirect])
+
+
+
+    const submitHandler = (e) => {
         e.preventDefault();
+        dispatch(register(name, email, password))
     }
     return (
         <>
@@ -16,16 +40,20 @@ const RegisterScreens = () => {
                 <Row className="row">
                     <Col className="right__login">
                         <img src={Noter} alt="" srcSet=""/>
-                        <Form onSubmit={handleButton}>
+
+                        {error && <Message variant="danger">{error}</Message>}
+                        {loading && <Loader></Loader>}
+
+                        <Form onSubmit={submitHandler}>
                             <Form.Group controlId="formBasicUsername">
-                                <input placeholder="Enter you Username" type="text" name="" id="text"/>
+                                <input onChange={(e)=> setName(e.target.value)} placeholder="Enter you Username" type="text" name="" id="text"/>
                             </Form.Group>
                             <Form.Group controlId="formBasicEmail">
-                                <input placeholder="Email Address" type="email" name="" id="email"/>
+                                <input onChange={(e)=> setEmail(e.target.value)} placeholder="Email Address" type="email" name="" id="email"/>
                             </Form.Group>
                             
                             <Form.Group controlId="formBasicPassword">
-                                <input placeholder="password" type="password" name="" id="password"/>
+                                <input onChange={(e)=> setPassword(e.target.value)} placeholder="password" type="password" name="" id="password"/>
                                 <Form.Text className="text-muted">
                                     {/* <Link to="/forgotPassword">Forgot Password</Link>  */}
                                 </Form.Text>

@@ -3,6 +3,8 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { login } from '../actions/userActions';
+import Loader from '../Components/Loader';
+import Message from '../Components/Message';
 import LoginImage from '../Image/loginPage.png';
 import Noter from '../Image/Noter.png';
 import './LoginScreens.css';
@@ -44,6 +46,10 @@ const LoginScreens = ({history, location}) => {
 
                     <Col className="right__login">
                         <img src={Noter} alt="" srcSet=""/>
+
+                        {error && <Message variant="danger">{error}</Message>}
+                        {loading && <Loader></Loader>}
+
                         <Form onSubmit={submitHandler}>
                             <Form.Group controlId="formBasicEmail">
                                 <input onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" type="email" name="" id="email"/>
